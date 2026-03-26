@@ -1,6 +1,30 @@
+//---------------- FUNÇÕES -------------------
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function decodeHtml(html) {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
+//----------------VARIÁVEIS REUTILIZADAS--------------------
+
+let myBody = document.querySelector('body');
+let newName = document.getElementById("myName");
+let newText = document.getElementById("changeText");
+let newAll = document.getElementById("changeAll");
+let myPicture = document.getElementById('myImage');
+let updateColor = document.getElementById('colorChange');
+let newPicture = document.getElementById("newImage");
+let otherImage = document.getElementById("niceImage");
+let gameList = document.getElementById('triviaList');
+
+
 //---------------------------- BOTÃO PARA TROCAR IMAGEM ------------------------------------
 
-let myPicture = document.getElementById('myImage');
 let buttonImage = document.getElementById('changeImage');
 
 buttonImage.addEventListener("click", function () {
@@ -28,19 +52,16 @@ hobbyButton.addEventListener("click", function () {
 
 //----------------------------- SUBMETER FORMULÁRIO PARA ALTERAÇÕES ---------------------------
 
-let buttonForm = document.getElementById("updateForm");
-let newName = document.getElementById("myName");
-let newText = document.getElementById("changeText");
-let newAll = document.getElementById("changeAll");
+let formChange = document.getElementById("myForm")
 
-buttonForm.addEventListener("click", function (event) {
+formChange.addEventListener("submit", function (event) {
     event.preventDefault();
+    let Data = new FormData(this);
+    
     let submitName = document.getElementById("nameForm").value.trim();
     let submitWord = document.getElementById("fraseForm").value.trim();
     let submitPicture = document.getElementById("fotoForm").value.trim();
     let submitColor = document.getElementById("colorInput").value;
-    let newPicture = document.getElementById("newImage");
-    let otherImage = document.getElementById("niceImage");
 
     if (submitName) {
         newName.textContent = submitName;
@@ -58,7 +79,6 @@ buttonForm.addEventListener("click", function (event) {
 //--------------------------------------- API -----------------------------------------------
 
 let triviaButton = document.getElementById('createQuestion');
-let gameList = document.getElementById('triviaList');
 
 triviaButton.addEventListener("click", function () {
     fetch("https://opentdb.com/api.php?amount=5")
@@ -68,7 +88,7 @@ triviaButton.addEventListener("click", function () {
             for (let element of data.results) {
                 console.log(element.question);
                 let li = document.createElement('li');
-                li.textContent = element.question.replace(/&quot;/g, '"') + ': ' + element.correct_answer.replace(/&amp;/g, '&');
+                li.textContent = decodeHtml(element.question) + ': ' + decodeHtml(element.correct_answer);
                 gameList.appendChild(li);
             }
         });
@@ -76,7 +96,6 @@ triviaButton.addEventListener("click", function () {
 
 //---------------------------------- MODIFICAR PARA DIA OU NOITE ----------------------------
 
-let myBody = document.querySelector('body');
 let darkMode = document.getElementById('changeDarkMode');
 
 darkMode.addEventListener("click", function (event) {
@@ -98,3 +117,46 @@ document.addEventListener('keydown', function (event) {
         alert("Tem a certeza que acabou o exercício?")
     }
 })
+
+//------------------------------ BOTÃO PARA GERAR COR ALEATÓRIA ----------------------------
+let aleatoryColor = document.getElementById('aboutColor');
+
+aleatoryColor.addEventListener('click', function () {
+    let r = getRandomInt(256);
+    let g = getRandomInt(256);
+    let b = getRandomInt(256);
+
+    console.log(updateColor);
+    updateColor.style.backgroundColor = 'rgb' + '(' + r + ',' + g + ',' + b + ')';
+})
+
+//------------------------------- BOTÃO DE RESET -------------------------------------------
+
+let originalName = newName.innerText;
+let originalText = newText.innerText;
+let originalPicture = myPicture.src;
+let originalBackground = newAll.style.backgroundColor;
+let originalColor = updateColor.style.backgroundColor;
+let originalPictureSrc = newPicture.src;
+let originalOtherImage = otherImage.src;
+let originalHobbies = myList.innerHTML;
+let originalAPI = gameList.innerText;
+
+let btnReset = document.getElementById('resetAll')
+console.log(btnReset);
+
+btnReset.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    newName.innerText = originalName;
+    newText.innerText = originalText;
+    newPicture.src = originalPictureSrc;
+    otherImage.src = originalOtherImage;
+    myPicture.src = originalPicture;
+    newAll.style.backgroundColor = originalBackground;
+    updateColor.style.backgroundColor = originalColor;
+    gameList.innerHTML = "";
+    formChange.reset();
+
+    myList.innerHTML = originalHobbies;
+});

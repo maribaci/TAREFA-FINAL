@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/style.css" />
     <!-- JS -->
@@ -44,7 +45,11 @@
     <section class="container text-center">
         <div class="row">
             <div class="col-2">
-                <button id="changeDarkMode">Dia / Noite</button>
+                <button id="changeDarkMode" class="rounded-pill bg-info">Dia / Noite</button>
+            </div>
+            <div class="col-8"></div>
+            <div class="col-2">
+                <button id="aboutColor" class="rounded-pill bg-info">Cor Aleatória</button>
             </div>
         </div>
     </section>
@@ -54,7 +59,7 @@
             </div>
             <div class="col-8">
                 <div id="myName">
-                    <h1 class="text-dark">Marina Tomaszewski</h1>
+                    <h2 class="text-dark">Marina Tomaszewski</h2>
                 </div>
             </div>
             <div class="col-2">
@@ -64,7 +69,7 @@
     <br>
     <section class="container text-center">
         <div class="row">
-            <div class="col-3">
+            <div class=" col-3">
             </div>
             <div class="col-2">
                 <img id="newImage" src="Images/graduacao.png" class="img-fluid">
@@ -87,11 +92,15 @@
                 <button class="rounded-pill bg-warning" id="changeImage">Trocar Imagem</button>
             </div>
         </div>
+        <br>
+            <div>
+                <button id="resetAll" class="rounded-pill">Resetar a página</button>
+            </div>
     </section>
     <br>
     <br>
     <section class="container rounded-pill text-bg-primary text-center" style="background-image:url(/Images/fundo.jpg)">
-        <div class="row">
+        <div class="row" id="colorChange">
             <div class="col-12">
                 <h4 id="firstthing"> Sobre mim</h4>
                 <div id="changeText">
@@ -102,7 +111,6 @@
                         Terminei em 2025 o Curso Superior de Tecnologia de Análise e Desenvolvimento de Sistemas pela
                         Uninter, com conhecimentos em Python, UML, Web Design, SQL, Testes de software, Qualidade de
                         Software, entre outros voltados a área.
-
                     </p>
                 </div>
             </div>
@@ -113,35 +121,35 @@
     <br>
     <section class="container rounded text-center">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-3 bg-light">
+            <div class="col"></div>
+            <div class="col-3 col-md-3 bg-light">
                 <br>
                 <h4 id="secondthing" class="text-dark">Formulário</h4>
-                <form>
+                <form id="myForm">
                     <br>
                     <div class="mb-3">
                         <label for="nameForm" class="form-label">Nome:</label>
-                        <input type="name" class="form-control" id="nameForm">
+                        <input type="name" class="form-control" id="nameForm" name="nameForm">
                     </div>
                     <div class="mb-3">
                         <label for="fraseForm" class="form-label">Frase de apresentação:</label>
-                        <textarea class="form-control" id="fraseForm" rows="3"></textarea>
+                        <textarea class="form-control" id="fraseForm" name="fraseForm" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="fotoForm" class="form-label">Foto (URL):</label>
-                        <input type="foto" class="form-control" id="fotoForm">
+                        <input type="foto" class="form-control" id="fotoForm" name="fotoForm">
                     </div>
                     <div class="mb-3">
                         <label for="colorInput" class="form-label">Escolha uma cor:</label>
-                        <input type="color" class="form-control form-control-color" id="colorInput" value="#563d7c">
+                        <input type="color" class="form-control form-control-color" id="colorInput" name="colorInput" value="#563d7c">
                     </div>
                     <button id="updateForm" type="submit" class="btn btn-primary">Atualizar portfólio</button>
                 </form>
             </div>
-            <div class="col-2 rounded bg-warning text-center">
+            <div class="col-sm-4 col-md-2 rounded bg-warning text-center">
                 <br>
                 <h4 id="thirdthing" class="text-dark">Meus Hobbies</h4>
-                <div class="col-8 text-left">
+                <div class="col-3 col-md-8 text-left" >
                     <ul id="list">
                         <li>Correr</li>
                         <li>Jogar Video Game</li>
@@ -152,7 +160,7 @@
                 <br>
                 <br>
             </div>
-            <div class="col-3 rounded bg-light">
+            <div class="col-md-3 col-md-3 rounded bg-light">
                 <br>
                 <h4 id="fourththing" class="text-dark"> API do dia </h4>
                 <br>

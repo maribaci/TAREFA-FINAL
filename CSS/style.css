@@ -1,4 +1,3 @@
-
 .night {
     background-color: black;
     color: white;
@@ -7,4 +6,18 @@
 .day {
     background-color: white;
     color: black;
+}
+
+#myName {
+
+    font-size: 40px;
+}
+
+@media (max-width: 768px) {
+    #changeText {
+        font-size: 10px;
+    }
+
+
+
 }
