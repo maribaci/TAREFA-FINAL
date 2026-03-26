@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Marina</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <!-- JS -->
+    <script src="/JSS/script.js" defer></script>
+</head>
+
+<body id="changeAll">
+    <div class="container-nav">
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container-fluid bg-light">
+                <a class="navbar-brand" href="#firstthing">About me</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#secondthing">Formulário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#thirdthing">Meus Hobbies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#fourththing">API</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div id="myName">
+                    <h1 class="text-dark">Marina Tomaszewski</h1>
+                </div>
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </section>
+    <br>
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-3">
+            </div>
+            <div class="col-2">
+                <img id="newImage" src="Images/graduacao.png" class="img-fluid">
+            </div>
+            <div class="col-2">
+                <img id="myImage" src="/Images/cursos.png" class="img-fluid">
+            </div>
+            <div class="col-2">
+                <img id="niceImage" src="/Images/experiencia.png" class="img-fluid">
+            </div>
+            <div class="col-3">
+            </div>
+        </div>
+    </section>
+    </div>
+    <br>
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-12">
+                <button class="rounded-pill bg-warning" id="changeImage">Trocar Imagem</button>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <section class="container rounded-pill text-bg-primary text-center" style="background-image:url(/Images/fundo.jpg)">
+        <div class="row">
+            <div class="col-12">
+                <h4 id="firstthing"> Sobre mim</h4>
+                <div id="changeText">
+                    <p>
+                        Sou uma profissional com experiência em atendimento ao cliente, vendas e análise de sistemas.
+                        Tenho experiência anterior como Analista de Sistemas e Qualidade, cargo que me trouxe muito
+                        aprendizado e novas experiências.
+                        Terminei em 2025 o Curso Superior de Tecnologia de Análise e Desenvolvimento de Sistemas pela
+                        Uninter, com conhecimentos em Python, UML, Web Design, SQL, Testes de software, Qualidade de
+                        Software, entre outros voltados a área.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="container rounded text-center">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-3 bg-light">
+                <br>
+                <h4 id="secondthing" class="text-dark">Formulário</h4>
+                <form>
+                    <br>
+                    <div class="mb-3">
+                        <label for="nameForm" class="form-label">Nome:</label>
+                        <input type="name" class="form-control" id="nameForm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fraseForm" class="form-label">Frase de apresentação:</label>
+                        <textarea class="form-control" id="fraseForm" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fotoForm" class="form-label">Foto (URL):</label>
+                        <input type="foto" class="form-control" id="fotoForm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorInput" class="form-label">Escolha uma cor:</label>
+                        <input type="color" class="form-control form-control-color" id="colorInput" value="#563d7c">
+                    </div>
+                    <button id="updateForm" type="submit" class="btn btn-primary">Atualizar portfólio</button>
+                </form>
+            </div>
+            <div class="col-2 rounded bg-warning text-center">
+                <br>
+                <h4 id="thirdthing" class="text-dark">Meus Hobbies</h4>
+                <div class="col-8 text-left">
+                    <ul id="list">
+                        <li>Correr</li>
+                        <li>Jogar Video Game</li>
+                    </ul>
+                </div>
+                <br>
+                <button id="myHobby">Adicionar hobbies</button>
+                <br>
+                <br>
+            </div>
+            <div class="col-3 rounded bg-light">
+                <br>
+                <h4 id="fourththing" class="text-dark"> API do dia </h4>
+                <br>
+                <button id="createQuestion" class="bg-danger">Trivia Game</button>
+                <ul id="triviaList"></ul>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </section>
+</body>
+
+</html>
