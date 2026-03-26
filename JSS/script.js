@@ -4,10 +4,10 @@ let myPicture = document.getElementById('myImage');
 let buttonImage = document.getElementById('changeImage');
 
 buttonImage.addEventListener("click", function() {
-  if (myPicture.src.endsWith ("/Images/cursos.png")) {
-    myPicture.src = "/Images/marina.png";
+  if (myPicture.src.endsWith ("Images/cursos.png")) {
+    myPicture.src = "Images/marina.png";
   } else {
-    myPicture.src = "/Images/cursos.png";
+    myPicture.src = "Images/cursos.png";
   }
 });
 
