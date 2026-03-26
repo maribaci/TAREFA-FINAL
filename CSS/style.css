@@ -1,7 +1,10 @@
-#fundo{
-  background-image: url('../Images/fundo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+.night {
+    background-color: black;
+    color: white;
+}
+
+.day {
+    background-color: white;
+    color: black;
 }

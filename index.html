@@ -15,7 +15,7 @@
     <script src="JSS/script.js" defer></script>
 </head>
 
-<body id="changeAll">
+<body id="changeAll" class="day">
     <div class="container-nav">
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid bg-light">
@@ -41,6 +41,13 @@
         </nav>
     </div>
     <br>
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-2">
+                <button id="changeDarkMode">Dia / Noite</button>
+            </div>
+        </div>
+    </section>
     <section class="container text-center">
         <div class="row">
             <div class="col-2">
@@ -149,8 +156,10 @@
                 <br>
                 <h4 id="fourththing" class="text-dark"> API do dia </h4>
                 <br>
-                <button id="createQuestion" class="bg-danger">Trivia Game</button>
+                <button id="createQuestion" class="bg-danger rounded-pill">Trivia Game</button>
+                <br>
                 <ul id="triviaList"></ul>
+                <br>
             </div>
             <div class="col-1"></div>
         </div>
