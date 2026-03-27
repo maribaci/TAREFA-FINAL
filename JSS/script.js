@@ -57,7 +57,7 @@ let formChange = document.getElementById("myForm")
 formChange.addEventListener("submit", function (event) {
     event.preventDefault();
     let Data = new FormData(this);
-    
+
     let submitName = document.getElementById("nameForm").value.trim();
     let submitWord = document.getElementById("fraseForm").value.trim();
     let submitPicture = document.getElementById("fotoForm").value.trim();
