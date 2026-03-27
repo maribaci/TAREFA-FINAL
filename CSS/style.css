@@ -17,7 +17,10 @@
     #changeText {
         font-size: 10px;
     }
-
-
-
 }
+
+
+.navbar .navbar-brand {
+    color: rgb(34, 7, 186);
+}
+

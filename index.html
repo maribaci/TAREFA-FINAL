@@ -15,11 +15,10 @@
     <!-- JS -->
     <script src="JSS/script.js" defer></script>
 </head>
-
 <body id="changeAll" class="day">
     <div class="container-nav">
-        <nav class="navbar navbar-expand-lg bg-white">
-            <div class="container-fluid bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-image:url(/Images/fundo.jpg)">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="#firstthing">About me</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,14 +41,15 @@
         </nav>
     </div>
     <br>
+    <br>
     <section class="container text-center">
         <div class="row">
             <div class="col-2">
-                <button id="changeDarkMode" class="rounded-pill bg-info">Dia / Noite</button>
+                <button id="changeDarkMode" class=" rounded bg-info">Dia / Noite</button>
             </div>
             <div class="col-8"></div>
             <div class="col-2">
-                <button id="aboutColor" class="rounded-pill bg-info">Cor Aleatória</button>
+                <button id="aboutColor" class=" rounded bg-info">Cor Aleatória</button>
             </div>
         </div>
     </section>
@@ -89,17 +89,17 @@
     <section class="container text-center">
         <div class="row">
             <div class="col-12">
-                <button class="rounded-pill bg-warning" id="changeImage">Trocar Imagem</button>
+                <button class="rounded bg-warning" id="changeImage">Trocar Imagem</button>
             </div>
         </div>
         <br>
             <div>
-                <button id="resetAll" class="rounded-pill">Resetar a página</button>
+                <button id="resetAll" class="rounded">Resetar a página</button>
             </div>
     </section>
     <br>
     <br>
-    <section class="container rounded-pill text-bg-primary text-center" style="background-image:url(/Images/fundo.jpg)">
+    <section class="container rounded text-bg-primary text-center" style="background-image:url(/Images/fundo.jpg)">
         <div class="row" id="colorChange">
             <div class="col-12">
                 <h4 id="firstthing"> Sobre mim</h4>
@@ -121,8 +121,7 @@
     <br>
     <section class="container rounded text-center">
         <div class="row">
-            <div class="col"></div>
-            <div class="col-3 col-md-3 bg-light">
+            <div class="col-3 rounded" style="background-image: url(/Images/fundo.jpg);">
                 <br>
                 <h4 id="secondthing" class="text-dark">Formulário</h4>
                 <form id="myForm">
@@ -146,7 +145,8 @@
                     <button id="updateForm" type="submit" class="btn btn-primary">Atualizar portfólio</button>
                 </form>
             </div>
-            <div class="col-sm-4 col-md-2 rounded bg-warning text-center">
+            <div class="col-1"></div>
+            <div class="col-4 rounded bg-warning text-center">
                 <br>
                 <h4 id="thirdthing" class="text-dark">Meus Hobbies</h4>
                 <div class="col-3 col-md-8 text-left" >
@@ -156,15 +156,16 @@
                     </ul>
                 </div>
                 <br>
-                <button id="myHobby">Adicionar hobbies</button>
+                <button id="myHobby" class="rounded">Adicionar hobbies</button>
                 <br>
                 <br>
             </div>
-            <div class="col-md-3 col-md-3 rounded bg-light">
+            <div class="col-1"></div>
+            <div class="col-3 rounded" style="background-image: url(/Images/fundo.jpg) ;">
                 <br>
                 <h4 id="fourththing" class="text-dark"> API do dia </h4>
                 <br>
-                <button id="createQuestion" class="bg-danger rounded-pill">Trivia Game</button>
+                <button id="createQuestion" class="bg-danger rounded">Trivia Game</button>
                 <br>
                 <ul id="triviaList"></ul>
                 <br>
