@@ -12,15 +12,16 @@ function decodeHtml(html) {
 
 //----------------VARIÁVEIS REUTILIZADAS--------------------
 
-let myBody = document.querySelector('body');
-let newName = document.getElementById("myName");
-let newText = document.getElementById("changeText");
-let newAll = document.getElementById("changeAll");
-let myPicture = document.getElementById('myImage');
-let updateColor = document.getElementById('colorChange');
-let newPicture = document.getElementById("newImage");
-let otherImage = document.getElementById("niceImage");
-let gameList = document.getElementById('triviaList');
+const myBody = document.querySelector('body');
+const newName = document.getElementById("myName");
+const newText = document.getElementById("changeText");
+const newAll = document.getElementById("changeAll");
+const myPicture = document.getElementById('myImage');
+const updateColor = document.getElementById('colorChange');
+const newPicture = document.getElementById("newImage");
+const otherImage = document.getElementById("niceImage");
+const gameList = document.getElementById('triviaList');
+const darkMode = document.getElementById('changeDarkMode');
 
 
 //---------------------------- BOTÃO PARA TROCAR IMAGEM ------------------------------------
@@ -96,8 +97,6 @@ triviaButton.addEventListener("click", function () {
 
 //---------------------------------- MODIFICAR PARA DIA OU NOITE ----------------------------
 
-let darkMode = document.getElementById('changeDarkMode');
-
 darkMode.addEventListener("click", function (event) {
     event.preventDefault();
     if (myBody.classList.contains('day')) {
@@ -113,7 +112,7 @@ darkMode.addEventListener("click", function (event) {
 
 document.addEventListener('keydown', function (event) {
     console.log(event.key);
-    if (event.key == "Enter" || event.key == "Enter") {
+    if (event.key == "Enter") {
         alert("Tem a certeza que acabou o exercício?")
     }
 })
@@ -132,15 +131,16 @@ aleatoryColor.addEventListener('click', function () {
 
 //------------------------------- BOTÃO DE RESET -------------------------------------------
 
-let originalName = newName.innerText;
-let originalText = newText.innerText;
-let originalPicture = myPicture.src;
-let originalBackground = newAll.style.backgroundColor;
-let originalColor = updateColor.style.backgroundColor;
-let originalPictureSrc = newPicture.src;
-let originalOtherImage = otherImage.src;
-let originalHobbies = myList.innerHTML;
-let originalAPI = gameList.innerText;
+const originalName = newName.innerText;
+const originalText = newText.innerText;
+const originalPicture = myPicture.src;
+const originalBackground = getComputedStyle(newAll).backgroundColor;
+const originalColor = getComputedStyle(updateColor).backgroundColor;
+const originalPictureSrc = newPicture.src;
+const originalOtherImage = otherImage.src;
+const originalHobbies = myList.innerHTML;
+const originalAPI = gameList.innerText;
+const originalBodyClass = myBody.className;
 
 let btnReset = document.getElementById('resetAll')
 console.log(btnReset);
@@ -153,10 +153,11 @@ btnReset.addEventListener("click", function (event) {
     newPicture.src = originalPictureSrc;
     otherImage.src = originalOtherImage;
     myPicture.src = originalPicture;
-    newAll.style.backgroundColor = originalBackground;
+    newAll.style.backgroundColor = '';
     updateColor.style.backgroundColor = originalColor;
-    gameList.innerHTML = "";
-    formChange.reset();
+    gameList.innerHTML = originalAPI;
+    myBody.className = originalBodyClass;
 
+    formChange.reset();
     myList.innerHTML = originalHobbies;
 });
